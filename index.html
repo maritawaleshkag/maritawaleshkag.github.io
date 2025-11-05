@@ -1,16 +1,148 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Kathe Limpieza Verde | Jardinería y Limpieza Pública</title>
-  <meta name="description" content="Servicios profesionales de jardinería y limpieza pública. Mantenimiento de zonas verdes, limpieza urbana y gestión sostenible de residuos.">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kathe Limpieza Verde</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f2f2f2;
+      color: #333;
+    }
+    header {
+      background-color: #1c1c1c;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 4rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header h1 {
+      color: #7cc46e;
+      font-weight: 700;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      color: #7cc46e;
+    }
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
+      color: white;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 700px;
+    }
+    .btn {
+      background-color: #7cc46e;
+      color: white;
+      padding: 0.8rem 1.6rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+      margin-top: 1rem;
+    }
+    .btn:hover {
+      background-color: #64a959;
+    }
+    section {
+      padding: 4rem 10%;
+    }
+    .about, .services, .contact {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      margin-bottom: 3rem;
+      padding: 3rem;
+    }
+    h3 {
+      color: #1c1c1c;
+      margin-bottom: 1rem;
+    }
+    footer {
+      background-color: #1c1c1c;
+      color: #ccc;
+      padding: 2rem;
+      text-align: center;
+    }
+    footer a {
+      color: #7cc46e;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-  <h1>Kathe Limpieza Verde</h1>
-  <p>Jardinería urbana y limpieza pública sostenible.</p>
-  <p><a href="#contacto">Contacto</a></p>
-  <h2 id="contacto">Contacto</h2>
-  <p>📧 contacto@kathe-ejemplo.com</p>
+
+  <header>
+    <h1>Kathe Limpieza Verde</h1>
+    <nav>
+      <a href="#about">Nosotros</a>
+      <a href="#services">Servicios</a>
+      <a href="#projects">Proyectos</a>
+      <a href="#contact">Contacto</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h2>Creemos juntos un futuro sostenible</h2>
+    <p>Jardinería urbana, limpieza pública y mantenimiento de espacios verdes con responsabilidad medioambiental.</p>
+    <button class="btn">Conócenos</button>
+  </div>
+
+  <section id="about" class="about">
+    <h3>Sobre nosotros</h3>
+    <p>En Kathe Limpieza Verde impulsamos la sostenibilidad urbana mediante servicios de jardinería, limpieza y cuidado ambiental. Promovemos espacios más limpios, naturales y agradables para las personas.</p>
+  </section>
+
+  <section id="services" class="services">
+    <h3>Servicios</h3>
+    <ul>
+      <li>Limpieza viaria y mantenimiento urbano</li>
+      <li>Jardinería y paisajismo sostenible</li>
+      <li>Gestión de residuos y reciclaje</li>
+      <li>Campañas de sensibilización ambiental</li>
+    </ul>
+  </section>
+
+  <section id="projects" class="projects">
+    <h3>Proyectos recientes</h3>
+    <p>Participamos en proyectos de limpieza y reforestación urbana en distintas ciudades, con un enfoque centrado en la sostenibilidad y el bienestar social.</p>
+  </section>
+
+  <section id="contact" class="contact">
+    <h3>Contáctanos</h3>
+    <p>📍 Madrid, España</p>
+    <p>📞 +34 600 123 456</p>
+    <p>📧 contacto@kathe-limpiezaverde.com</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Kathe Limpieza Verde | Inspirando sostenibilidad 🌱</p>
+    <p><a href="#top">Volver arriba</a></p>
+  </footer>
+
 </body>
 </html>
