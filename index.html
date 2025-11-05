@@ -1,148 +1,213 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kathe Limpieza Verde</title>
   <style>
+    /* ---------- ESTILOS GENERALES ---------- */
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #f2f2f2;
-      color: #333;
+      color: #222;
+      background: linear-gradient(135deg, #e6e6e6, #cfcfcf);
+      overflow-x: hidden;
     }
+
     header {
-      background-color: #1c1c1c;
-      color: white;
+      background-color: rgba(255, 255, 255, 0.8);
+      position: fixed;
+      top: 0;
+      width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.2rem 4rem;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      padding: 15px 60px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      backdrop-filter: blur(8px);
+      z-index: 100;
     }
+
     header h1 {
-      color: #7cc46e;
-      font-weight: 700;
+      font-size: 1.5rem;
+      color: #008037;
     }
+
     nav a {
-      color: white;
+      margin-left: 20px;
       text-decoration: none;
-      margin-left: 2rem;
+      color: #222;
       font-weight: 500;
-      transition: 0.3s;
     }
+
     nav a:hover {
-      color: #7cc46e;
+      color: #008037;
     }
+
+    /* ---------- SECCIÓN HERO (PRINCIPAL) ---------- */
     .hero {
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1500&q=80') no-repeat center center/cover;
-      color: white;
-      height: 90vh;
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1618477461853-5e6a1b9b6f27?auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: white;
       text-align: center;
+      position: relative;
     }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+    }
+
     .hero h2 {
       font-size: 3rem;
-      margin-bottom: 1rem;
+      z-index: 1;
+      max-width: 800px;
+      line-height: 1.2;
     }
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 700px;
-    }
-    .btn {
-      background-color: #7cc46e;
+
+    .hero button {
+      z-index: 1;
+      margin-top: 25px;
+      background-color: #008037;
       color: white;
-      padding: 0.8rem 1.6rem;
       border: none;
-      border-radius: 5px;
+      padding: 15px 35px;
+      font-size: 1rem;
+      border-radius: 30px;
       cursor: pointer;
-      font-weight: bold;
-      transition: 0.3s;
-      margin-top: 1rem;
+      transition: background 0.3s;
     }
-    .btn:hover {
-      background-color: #64a959;
+
+    .hero button:hover {
+      background-color: #00a84a;
     }
+
+    /* ---------- SECCIONES DE CONTENIDO ---------- */
     section {
-      padding: 4rem 10%;
-    }
-    .about, .services, .contact {
+      padding: 100px 10%;
       background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-      margin-bottom: 3rem;
-      padding: 3rem;
+      margin: 40px auto;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
     }
-    h3 {
-      color: #1c1c1c;
-      margin-bottom: 1rem;
+
+    section h3 {
+      font-size: 2rem;
+      color: #008037;
+      margin-bottom: 20px;
     }
+
+    section p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    /* ---------- PIE DE PÁGINA ---------- */
     footer {
-      background-color: #1c1c1c;
+      background-color: #111;
       color: #ccc;
-      padding: 2rem;
       text-align: center;
+      padding: 40px 20px;
+      font-size: 0.9rem;
     }
+
     footer a {
-      color: #7cc46e;
+      color: #00a84a;
       text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* ---------- ANIMACIÓN DE FONDO ---------- */
+    .bubbles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .bubbles span {
+      position: absolute;
+      display: block;
+      width: 40px;
+      height: 40px;
+      background: rgba(0, 128, 55, 0.2);
+      animation: rise 10s infinite ease-in;
+      bottom: -150px;
+      border-radius: 50%;
+    }
+
+    @keyframes rise {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-1000px) scale(1.5); opacity: 0; }
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>Kathe Limpieza Verde</h1>
     <nav>
-      <a href="#about">Nosotros</a>
-      <a href="#services">Servicios</a>
-      <a href="#projects">Proyectos</a>
-      <a href="#contact">Contacto</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#contacto">Contacto</a>
     </nav>
   </header>
 
   <div class="hero">
-    <h2>Creemos juntos un futuro sostenible</h2>
-    <p>Jardinería urbana, limpieza pública y mantenimiento de espacios verdes con responsabilidad medioambiental.</p>
-    <button class="btn">Conócenos</button>
+    <h2>Creemos juntos un futuro sostenible 🌿</h2>
+    <button onclick="document.getElementById('servicios').scrollIntoView({behavior:'smooth'})">Conócenos</button>
   </div>
 
-  <section id="about" class="about">
-    <h3>Sobre nosotros</h3>
-    <p>En Kathe Limpieza Verde impulsamos la sostenibilidad urbana mediante servicios de jardinería, limpieza y cuidado ambiental. Promovemos espacios más limpios, naturales y agradables para las personas.</p>
+  <section id="nosotros">
+    <h3>Nuestra Misión</h3>
+    <p>
+      Contribuimos al bienestar social ofreciendo servicios de limpieza urbana y jardinería sostenible que
+      cuidan tanto a las personas como al entorno. Apostamos por la innovación y la responsabilidad ambiental.
+    </p>
   </section>
 
-  <section id="services" class="services">
-    <h3>Servicios</h3>
-    <ul>
-      <li>Limpieza viaria y mantenimiento urbano</li>
-      <li>Jardinería y paisajismo sostenible</li>
-      <li>Gestión de residuos y reciclaje</li>
-      <li>Campañas de sensibilización ambiental</li>
-    </ul>
+  <section id="servicios">
+    <h3>Servicios Medioambientales</h3>
+    <p>
+      🌱 Limpieza viaria y recogida de residuos.<br>
+      🌳 Mantenimiento de zonas verdes.<br>
+      🚮 Gestión sostenible de residuos.<br>
+      ♻️ Asesoramiento en sostenibilidad y reciclaje.
+    </p>
   </section>
 
-  <section id="projects" class="projects">
-    <h3>Proyectos recientes</h3>
-    <p>Participamos en proyectos de limpieza y reforestación urbana en distintas ciudades, con un enfoque centrado en la sostenibilidad y el bienestar social.</p>
-  </section>
-
-  <section id="contact" class="contact">
+  <section id="contacto">
     <h3>Contáctanos</h3>
-    <p>📍 Madrid, España</p>
-    <p>📞 +34 600 123 456</p>
-    <p>📧 contacto@kathe-limpiezaverde.com</p>
+    <p>
+      📍 Madrid, España<br>
+      ✉️ <a href="mailto:contacto@kathelimpiezaverde.com">contacto@kathelimpiezaverde.com</a>
+    </p>
   </section>
 
   <footer>
-    <p>© 2025 Kathe Limpieza Verde | Inspirando sostenibilidad 🌱</p>
-    <p><a href="#top">Volver arriba</a></p>
+    © 2025 Kathe Limpieza Verde · Todos los derechos reservados
   </footer>
 
+  <div class="bubbles">
+    <span style="left:10%; animation-delay:0s;"></span>
+    <span style="left:25%; animation-delay:2s;"></span>
+    <span style="left:40%; animation-delay:4s;"></span>
+    <span style="left:55%; animation-delay:1s;"></span>
+    <span style="left:70%; animation-delay:3s;"></span>
+    <span style="left:85%; animation-delay:5s;"></span>
+  </div>
 </body>
 </html>
+
